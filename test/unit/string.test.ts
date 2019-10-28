@@ -17,7 +17,7 @@ describe('Given [String] Functions', (): void => {
 
         const value: string = random();
 
-        expect(value).to.be.lengthOf(11);
+        expect(value).to.be.lengthOf(10);
     });
 
     it('should be able to create present date string', (): void => {
@@ -36,10 +36,7 @@ describe('Given [String] Functions', (): void => {
         const value: string = unique(date);
         const value2: string = unique(date);
 
-        console.log(value);
-        console.log(value2);
-
-        expect(value).to.be.lengthOf(20);
-        expect(value.substring(0, 9)).to.be.equal(value2.substring(0, 9));
+        expect(value).to.be.lengthOf(18);
+        expect(value.substring(0, 8)).to.be.equal(value2.substring(0, 8));
     });
 });
