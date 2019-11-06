@@ -4,5 +4,6 @@
  * @description Index
  */
 
+export * from "./scenario";
 export * from "./string";
 
