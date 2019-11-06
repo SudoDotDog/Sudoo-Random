@@ -7,8 +7,15 @@
 export const randomString = (length: number = 10): string => {
 
     const value: string = Math.random().toString(36).substring(2);
+
     const acutalLength: number = length <= 10 ? length : 10;
-    return value.substring(0, acutalLength);
+    const assertValue: string = value.substring(0, acutalLength);
+
+    if (assertValue.length < acutalLength) {
+        return assertValue.repeat(3).substring(0, acutalLength);
+    }
+
+    return assertValue;
 };
 
 export const randomPresent = (time: Date = new Date()): string => {
