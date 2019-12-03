@@ -4,11 +4,13 @@
  * @description String
  */
 
-export const randomString = (length: number = 10): string => {
+import { DEFAULT_STRING_LENGTH, SINGLE_BATCH_TIME_STRING_LENGTH } from "./declare";
+
+export const randomString = (length: number = DEFAULT_STRING_LENGTH): string => {
 
     const value: string = Math.random().toString(36).substring(2);
 
-    const acutalLength: number = length <= 10 ? length : 10;
+    const acutalLength: number = length <= DEFAULT_STRING_LENGTH ? length : DEFAULT_STRING_LENGTH;
     const assertValue: string = value.substring(0, acutalLength);
 
     if (assertValue.length < acutalLength) {
@@ -21,7 +23,7 @@ export const randomString = (length: number = 10): string => {
 export const randomPresent = (time: Date = new Date()): string => {
 
     const value: string = time.getTime().toString(36);
-    return value.substring(0, 8);
+    return value.substring(0, SINGLE_BATCH_TIME_STRING_LENGTH);
 };
 
 export const randomUnique = (time: Date = new Date()): string => {
