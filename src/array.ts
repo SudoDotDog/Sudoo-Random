@@ -12,5 +12,5 @@ export const randomElement = <T extends any = any>(array: T[]): T => {
         return undefined as any as T;
     }
     const index: number = randomNaturalBelow(array.length);
-    return array[index] as T;
+    return array[index];
 };
