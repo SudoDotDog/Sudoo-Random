@@ -36,6 +36,7 @@ describe('Given [String] Functions', (): void => {
         const value: string = randomUnique(date);
         const value2: string = randomUnique(date);
 
+        // eslint-disable-next-line @typescript-eslint/no-magic-numbers
         expect(value).to.be.lengthOf(18);
         expect(value.substring(0, 8)).to.be.equal(value2.substring(0, 8));
     });

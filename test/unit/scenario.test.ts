@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-magic-numbers */
 /**
  * @author WMXPY
  * @namespace Random
@@ -11,6 +12,7 @@ import { randomApiKey } from '../../src';
 
 describe('Given [Scenario] Functions', (): void => {
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const chance: Chance.Chance = new Chance('random-scenario');
 
     it('should be able to create random api key', (): void => {
