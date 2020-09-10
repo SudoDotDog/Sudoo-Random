@@ -15,7 +15,6 @@
     "url": "https://github.com/SudoDotDog/Sudoo-Random/issues"
   },
   "homepage": "https://github.com/SudoDotDog/Sudoo-Random#readme",
-  "dependencies": {},
   "devDependencies": {
     "@sudoo/io": "^1.8.0",
     "@sudoo/triforce": "^2.8.6"
