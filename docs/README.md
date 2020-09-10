@@ -6,3 +6,11 @@
 [![downloads](https://img.shields.io/npm/dm/@sudoo/random.svg)](https://www.npmjs.com/package/@sudoo/random)
 
 :game_die: Random
+
+## Install
+
+```sh
+yarn add @sudoo/random
+# Or
+npm install @sudoo/random --save
+```
