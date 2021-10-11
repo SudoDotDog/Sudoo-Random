@@ -20,4 +20,25 @@ describe('Given [Numeric-String] Functions', (): void => {
 
         expect(value).to.be.lengthOf(10);
     });
+
+    it('should be able to create random numeric string with length setting - 0', (): void => {
+
+        const value: string = randomString(0);
+
+        expect(value).to.be.lengthOf(0);
+    });
+
+    it('should be able to create random numeric string with length setting - small', (): void => {
+
+        const value: string = randomString(1);
+
+        expect(value).to.be.lengthOf(1);
+    });
+
+    it('should be able to create random numeric string with length setting - large', (): void => {
+
+        const value: string = randomString(100);
+
+        expect(value).to.be.lengthOf(100);
+    });
 });

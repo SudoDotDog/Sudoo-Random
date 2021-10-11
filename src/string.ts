@@ -12,13 +12,14 @@ export const randomString = (length: number = DEFAULT_STRING_LENGTH): string => 
         .toString(THIRTY_SIX_ORDER)
         .substring(BINARY_ORDER);
 
-    const acutalLength: number = length <= DEFAULT_STRING_LENGTH ? length : DEFAULT_STRING_LENGTH;
+    const acutalLength: number = Math.max(length, 0);
     const assertValue: string = value.substring(0, acutalLength);
 
     if (assertValue.length < acutalLength) {
         return assertValue.repeat(3).substring(0, acutalLength);
     }
 
+    console.log(assertValue);
     return assertValue;
 };
 
