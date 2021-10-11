@@ -4,7 +4,7 @@
  * @description String
  */
 
-import { BINARY_ORDER, DEFAULT_STRING_LENGTH, SINGLE_BATCH_TIME_STRING_LENGTH, THIRTY_SIX_ORDER } from "./declare";
+import { BINARY_ORDER, DEFAULT_STRING_LENGTH, MAX_RANDOM_STRING_LENGTH, SINGLE_BATCH_TIME_STRING_LENGTH, THIRTY_SIX_ORDER } from "./declare";
 
 export const randomString = (length: number = DEFAULT_STRING_LENGTH): string => {
 
@@ -12,15 +12,13 @@ export const randomString = (length: number = DEFAULT_STRING_LENGTH): string => 
         .toString(THIRTY_SIX_ORDER)
         .substring(BINARY_ORDER);
 
-    const acutalLength: number = Math.max(length, 0);
+    const acutalLength: number = Math.max(Math.min(length, MAX_RANDOM_STRING_LENGTH), 0);
     const assertValue: string = value.substring(0, acutalLength);
 
-    let currentResult: string = assertValue;
-    while (currentResult.length < acutalLength) {
-        currentResult += randomString(length - currentResult.length);
+    if (assertValue.length < acutalLength) {
+        return assertValue + randomString(acutalLength - assertValue.length);
     }
-
-    return currentResult;
+    return assertValue;
 };
 
 export const randomPresent = (time: Date = new Date()): string => {
