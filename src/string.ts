@@ -15,12 +15,12 @@ export const randomString = (length: number = DEFAULT_STRING_LENGTH): string => 
     const acutalLength: number = Math.max(length, 0);
     const assertValue: string = value.substring(0, acutalLength);
 
-    if (assertValue.length < acutalLength) {
-        return assertValue.repeat(3).substring(0, acutalLength);
+    let currentResult: string = assertValue;
+    while (currentResult.length < acutalLength) {
+        currentResult += randomString(length - currentResult.length);
     }
 
-    console.log(assertValue);
-    return assertValue;
+    return currentResult;
 };
 
 export const randomPresent = (time: Date = new Date()): string => {
