@@ -1,7 +1,7 @@
 {
   "name": "@sudoo/random",
   "version": "2.2.0",
-  "description": ":game_die: Random",
+  "description": "Random",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SudoDotDog/Sudoo-Random.git"
